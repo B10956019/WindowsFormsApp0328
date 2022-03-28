@@ -105,6 +105,7 @@ namespace WindowsFormsApp0328
             // 
             this.textBox2.Location = new System.Drawing.Point(198, 90);
             this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(431, 22);
             this.textBox2.TabIndex = 6;
             // 

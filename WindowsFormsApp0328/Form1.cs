@@ -40,7 +40,7 @@ namespace WindowsFormsApp0328
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.Text = MyIP();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -72,6 +72,19 @@ namespace WindowsFormsApp0328
             UdpClient S = new UdpClient();
             S.Send(B, B.Length, IP, Port);
             S.Close();
+        }
+        private string MyIP()
+        {
+            string hostname = Dns.GetHostName();
+            IPAddress[] ip = Dns.GetHostEntry(hostname).AddressList;
+            foreach(IPAddress it in ip)
+            {
+                if(it.AddressFamily==AddressFamily.InterNetwork)
+                {
+                    return it.ToString();
+                }
+            }
+            return "";
         }
     }
 }
